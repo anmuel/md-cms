@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/anmuel/md-cms.svg?branch=master)](https://travis-ci.org/anmuel/md-cms)
+
 # Description
 
 A playground project to dig around with Typescript 2, Hapi & Co.
