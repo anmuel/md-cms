@@ -1,3 +1,4 @@
+import * as Settings from "../src/settings";
 import Logger from "./logger";
 import * as Fs from "fs";
 import { minify } from "html-minifier";
@@ -28,10 +29,7 @@ export default class CmsFile {
     Logger.debug(`reading ${this.path} ...`);
     this.markdown = Fs.readFileSync(this.path, this.encoding);
     if (this.markdown) {
-      this.html = minify(marked(this.markdown), {
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-      });
+      this.html = minify(marked(this.markdown), Settings.minifyOptions);
     }
   }
 }
