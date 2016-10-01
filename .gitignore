@@ -7,5 +7,6 @@ npm-debug.log
 lib/
 logs/
 .vscode/
+markdown/
 
 coverage.html
