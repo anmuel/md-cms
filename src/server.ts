@@ -3,6 +3,8 @@ import Logger from "./logger";
 import * as Boom from "boom";
 import * as Hapi from "hapi";
 
+const TIMEOUT = 60 * 1000;
+
 export class Server {
   private server: Hapi.Server;
   private isConnected: boolean;
@@ -36,7 +38,7 @@ export class Server {
   }
 
   public stop() {
-    this.server.stop({ timeout: 60 * 1000 }, () => {
+    this.server.stop({ timeout: TIMEOUT }, () => {
       Logger.debug("Server stopped");
       this.isConnected = false;
     });
@@ -48,15 +50,14 @@ export class Server {
 
   private addRoutes() {
     this.server.route({
-      // TODO: Add typings
-      handler: (request: any, reply: any) => {
-        const file = request.params.file;
+      handler: (request: Hapi.Request, reply: Hapi.IReply) => {
+        const file = request.params["file"];
         try {
           const content = this.fileHandler.getFileContent(file);
           reply(content);
         } catch (e) {
           Logger.debug(e.toString());
-          reply(Boom.notFound("Unavailable"));
+          reply(Boom.notFound("Unavailable file " + file));
         }
       },
       method: "GET",
