@@ -1,12 +1,16 @@
 {
   "name": "md-cms",
   "version": "0.0.0",
-  "description": "md-cms",
+  "description": "A playground project to dig around with Typescript 2, Hapi & Co.",
   "license": "MIT",
-  "repository": "",
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:anmuel/md-cms.git"
+  },
+  "author": "Andreas Müller <anmuel86@gmail.com>",
   "keywords": [
-    ""
+    "CMS",
+    "Markdown"
   ],
   "files": [
     "lib"
