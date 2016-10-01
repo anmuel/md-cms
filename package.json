@@ -1,0 +1,64 @@
+{
+  "name": "md-cms",
+  "version": "0.0.0",
+  "description": "md-cms",
+  "license": "MIT",
+  "repository": "",
+  "author": "",
+  "keywords": [
+    ""
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "build": "npm run clean && npm run lint && echo Using TypeScript && tsc --version && tsc --pretty",
+    "test": "npm run build && mocha --compilers ts:ts-node/register --recursive test/**/*-spec.ts",
+    "watch": "npm run build -- --watch",
+    "watch:test": "npm run test -- --watch"
+  },
+  "watch": {
+    "{src,test}/**/*.{js,ts}": [
+      "test"
+    ]
+  },
+  "dependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/hapi": "^13.0.35",
+    "@types/log4js": "0.0.32",
+    "@types/marked": "0.0.28",
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.41",
+    "boom": "^4.1.0",
+    "hapi": "^15.1.1",
+    "html-minifier": "^3.1.0",
+    "lodash": "^4.16.2",
+    "log4js": "^0.6.38",
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {
+    "@types/boom": "0.0.32",
+    "@types/chai": "3.4.30",
+    "@types/html-minifier": "^1.1.30",
+    "@types/lodash": "^4.14.36",
+    "@types/mocha": "2.2.29",
+    "@types/node": "6.0.31",
+    "@types/request": "0.0.31",
+    "blanket": "^1.2.3",
+    "chai": "^3.5.0",
+    "mocha": "^3.0.1",
+    "npm-scripts-watcher": "^1.0.2",
+    "request": "^2.75.0",
+    "rimraf": "^2.5.4",
+    "ts-node": "^1.2.2",
+    "tslint": "3.15.1",
+    "typescript": "2.0.3"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}

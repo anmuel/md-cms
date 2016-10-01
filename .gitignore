@@ -1,0 +1,11 @@
+coverage/
+node_modules/
+npm-debug.log
+*.js
+*.log
+*.map
+lib/
+logs/
+.vscode/
+
+coverage.html
