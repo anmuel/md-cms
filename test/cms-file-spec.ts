@@ -16,8 +16,8 @@ describe("CmsFile", () => {
 
   it("has a markdown string", () => {
     const actual = whitespaceRemove(cmsFile.markdownContent);
-    const expected = "Headline\r\n------\r\n\r\n* list item 1\r\n* list item 2" +
-    "\r\n\r\n# list item 1\r\n# *list item 2*\r\n";
+    const expected = "Headline\n------\n\n* list item 1\n* list item 2" +
+    "\n\n# list item 1\n# *list item 2*\n";
     expect(actual).to.eq(whitespaceRemove(expected));
   });
 
